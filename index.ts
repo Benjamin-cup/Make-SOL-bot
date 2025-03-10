@@ -38,19 +38,19 @@ async function main() {
             console.log("SOL Balance: ", solBalance);
             console.log("USDC Balance: ", usdcBalance);
 
-            if ((swapPrice - currentPrice) > DOWNLIMITPRICE || lastPrice < currentPrice) {
+            if ((swapPrice - currentPrice) > DOWNLIMITPRICE && lastPrice < currentPrice) {
                 console.log("SOL price is high, swapping USDC to SOL...");
                 if (usdcBalance > 0.1) {
                     let swapTx = await getSellTxWithJupiter(wallet, new PublicKey(QUOTE_MINT), (Math.floor((usdcBalance - 0.1) * tokenLamport)));
                     if (swapTx !== null) {
                         let txSig = await executeJitoTx([swapTx], wallet, "confirmed");
-                        swapPrice = currentPrice;
+                        // swapPrice = currentPrice;
                         console.log("Swapped USDC to SOL: ", txSig);
                     } else {
                         console.error("Error: swapTx is null");
                     }
                 }
-            } else if ((currentPrice - swapPrice) > UPLIMITPRICE || lastPrice > currentPrice) {
+            } else if ((currentPrice - swapPrice) > UPLIMITPRICE && lastPrice > currentPrice) {
                 console.log("SOL price is low, swapping SOL to USDC...");
                 let solToSwap = solBalance - MIN_SOL_BALANCE;
                 if (solToSwap > 0) {
