@@ -1,7 +1,6 @@
 # 🚀 **Make-SOL-bot** 
 
-The Make-SOL-bot is a useful tool that helps protect against losses caused by SOL price fluctuations. The bot automatically swaps all SOL in your wallet to USDC when the SOL price drops below a set limit. Conversely, when the SOL price rises above the limit, it swaps all USDC back to SOL. This ensures that you avoid losses during volatile market conditions.
-
+The Make-SOL-bot is an automated trading tool designed to protect your assets from SOL price fluctuations. It automatically swaps all SOL in your wallet to USDC when the SOL price drops below a set threshold and converts USDC back to SOL when the price rises above a specified limit. This ensures that you minimize potential losses during volatile market conditions.
 
 ### 🎯 **Key Features**
 
@@ -90,8 +89,10 @@ Follow these steps to get your **Make-SOL-bot** up and running!
 
 ## 🧑‍💻 **Notes**
 
-The bot requires a valid Solana RPC provider.
+The bot requires a valid Solana RPC provider to function properly.
 
-Ensure that your wallet has enough SOL for transaction fees.
+Ensure your wallet has enough SOL for transaction fees.
 
-JITO fee can be adjusted if needed.
+JITO fee settings can be adjusted as needed.
+
+Always review your configuration before running the bot.
